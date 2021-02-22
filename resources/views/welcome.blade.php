@@ -24,6 +24,8 @@
             </form>
         <td><a href="show-compagny/{{$item->id}}" class="btn btn-primary"> Show</a></td>
         </td>
+        <td><a href="edit-compagny/{{$item->id}}" class="btn btn-success"> Edit</a></td>
+    </td>
       </tr>
       @endforeach
     </tbody>

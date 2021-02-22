@@ -66,9 +66,10 @@ class CompagnyController extends Controller
      * @param  \App\Models\Compagny  $compagny
      * @return \Illuminate\Http\Response
      */
-    public function edit(Compagny $compagny)
+    public function edit($id)
     {
-        //
+        $edit = Compagny::find($id);
+        return view("pages.edit", compact("edit"));
     }
 
     /**
@@ -78,9 +79,18 @@ class CompagnyController extends Controller
      * @param  \App\Models\Compagny  $compagny
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Compagny $compagny)
+    public function update(Request $request, $id)
     {
-        //
+        $update = Compagny::find($id);
+        $update->Compagny = $request->Compagny;
+        $update->Adresse = $request->Adresse;
+        $update->phone = $request->phone;
+        $update->email = $request->email;
+        $update->name = $request->name;
+        $update->surname = $request->surname;
+        $update->src = $request->src;
+        $update ->save();
+        return redirect('/');
     }
 
     /**
