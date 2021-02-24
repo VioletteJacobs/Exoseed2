@@ -89,6 +89,14 @@ class CompagnyController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $validation = $request->validate([
+            "Compagny" => "required|min:5|max:200",
+            "Compagny" => "required|min:5|max:50",
+            "Compagny" => "required|min:5|max:50",
+            "Compagny" => "required|min:5|max:30",
+            "Compagny" => "required|min:5|max:500",
+        ]);
+
         $update = Compagny::find($id);
         $update->Compagny = $request->Compagny;
         $update->Adresse = $request->Adresse;
