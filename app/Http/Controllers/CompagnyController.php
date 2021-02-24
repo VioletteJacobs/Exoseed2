@@ -36,6 +36,14 @@ class CompagnyController extends Controller
      */
     public function store(Request $request)
     {
+        $validation = $request->validate([
+            "Compagny" => "required|min:5|max:200",
+            "Compagny" => "required|min:5|max:50",
+            "Compagny" => "required|min:5|max:50",
+            "Compagny" => "required|min:5|max:30",
+            "Compagny" => "required|min:5|max:500",
+        ]);
+
         $newEntry = new Compagny;
         $newEntry->Compagny = $request->Compagny;
         $newEntry->Adresse = $request->Adresse;
